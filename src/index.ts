@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 import router from './routes/router'
 import morgan from 'morgan'
 
-const port = 4000
+const port = process.env.PORT
 const app = express()
 app.use(cors({
     origin: true,
@@ -29,5 +29,5 @@ app.use(bodyParser.json())
 app.use(router)
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`)
+    console.log(`Server is running at port ${port}`)
 })
